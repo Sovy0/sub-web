@@ -210,7 +210,7 @@ export default {
           ClashR: "clashr",
           Surge2: "surge&ver=2",
         },
-        backendOptions: [{ value: "https://sub.freelxy.site/sub?" }],
+        backendOptions: [{ value: "https://subconverter.freelxy.site/sub?" }],
         remoteConfig: [
           {
             label: "mine",
