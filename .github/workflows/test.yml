@@ -28,27 +28,8 @@ jobs:
         yarn build
 
 
-
-    - name: Set up Git
-      run: |
-        git config --global user.email "yanglx0530@gmail.com"
-        git config --global user.name "Sovy0"
-
-    - name: Commit and Push Generated Files     # 在生成的文件目录中切换，例如：cd path/to/generated/files
-      run: |
-        cd dist     
-
-        # 初始化一个新的Git仓库
-        git init
-        git branch -m master
-        # 将生成的文件添加到暂存区
-        git add .
-
-        # 创建一个新的提交
-        git commit -m "Auto-generated files"
-
-        # 添加远程存储库作为git的一个新远程
-        git remote add origin https://github.com/Sovy0/ddd.git # 请替换为您的仓库URL
-
-        # 推送更改到指定分支，例如gh-pages分支
-        git push -f origin master # 将main分支的更改推送到gh-pages分支
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
