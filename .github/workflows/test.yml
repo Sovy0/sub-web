@@ -27,13 +27,20 @@ jobs:
         yarn install
         yarn build
 
+
+
+    - name: Set up Git
+      run: |
+        git config --global user.email "test@example.com"
+        git config --global user.name "test"
+
     - name: Commit and Push Generated Files     # 在生成的文件目录中切换，例如：cd path/to/generated/files
       run: |
         cd dist     
 
         # 初始化一个新的Git仓库
         git init
-
+        git branch -m master
         # 将生成的文件添加到暂存区
         git add .
 
