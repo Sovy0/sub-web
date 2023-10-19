@@ -210,8 +210,18 @@ export default {
           ClashR: "clashr",
           Surge2: "surge&ver=2",
         },
-        backendOptions: [{ value: "http://127.0.0.1:25500/sub?" }],
+        backendOptions: [{ value: "https://sub.freelxy.site/sub?" }],
         remoteConfig: [
+          {
+            label: "mine",
+            options: [
+              {
+                label: "clash-config",
+                value:
+                  "https://raw.githubusercontent.com/Sovy0/proxy-rules/acs/clash-config.ini"
+              },
+            ]
+          },
           {
             label: "universal",
             options: [
