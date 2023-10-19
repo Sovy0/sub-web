@@ -31,8 +31,8 @@ jobs:
 
     - name: Set up Git
       run: |
-        git config --global user.email "test@example.com"
-        git config --global user.name "test"
+        git config --global user.email "yanglx0530@gmail.com"
+        git config --global user.name "Sovy0"
 
     - name: Commit and Push Generated Files     # 在生成的文件目录中切换，例如：cd path/to/generated/files
       run: |
