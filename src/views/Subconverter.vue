@@ -210,7 +210,24 @@ export default {
           ClashR: "clashr",
           Surge2: "surge&ver=2",
         },
-        backendOptions: [{ value: "https://subconverter.freelxy.site/sub?" }],
+        backendOptions: [
+          {
+            label: "sub.xeton.dev (subconverter作者后端)",
+            value: "https://subconverter.freelxy.site/sub?"
+          },
+          {
+            label: "sub.maoxiongnet.com (猫熊后端)",
+            value: "https://subconverter.freelxy.site/sub?bd=sub.maoxiongnet.com&"
+          },
+          {
+            label: "sub.id9.cc (品云后端)",
+            value: "https://subconverter.freelxy.site/sub?bd=sub.id9.cc&"
+          },
+          {
+            label: "v.id9.cc (品云实验后端)",
+            value: "https://subconverter.freelxy.site/sub?bd=v.id9.cc&"
+          }
+        ],
         remoteConfig: [
           {
             label: "mine",
