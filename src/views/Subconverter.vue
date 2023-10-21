@@ -26,12 +26,14 @@
               </el-form-item>
 
               <div v-if="advanced === '2'">
+<!---原始代码
                 <el-form-item label="后端地址:">
                   <el-autocomplete style="width: 100%" v-model="form.customBackend" :fetch-suggestions="backendSearch"
                     placeholder="动动小手，（建议）自行搭建后端服务。例：http://127.0.0.1:25500/sub?">
                     <el-button slot="append" @click="gotoGayhub" icon="el-icon-link">前往项目仓库</el-button>
                   </el-autocomplete>
                 </el-form-item>
+
                 <el-form-item label="远程配置:">
                   <el-select v-model="form.remoteConfig" allow-create filterable placeholder="请选择" style="width: 100%">
                     <el-option-group v-for="group in options.remoteConfig" :key="group.label" :label="group.label">
@@ -41,6 +43,31 @@
                     <el-button slot="append" @click="gotoRemoteConfig" icon="el-icon-link">配置示例</el-button>
                   </el-select>
                 </el-form-item>
+-->
+                <el-form-item label="后端地址:">
+                  <div style="display: flex; align-items: center;">
+                    <el-select v-model="form.customBackend" allow-create filterable placeholder="请选择" style="width: 100%">
+                      <el-option-group v-for="group in options.backendOptions" :key="group.label" :label="group.label">
+                        <el-option v-for="item in group.options" :key="item.value" :label="item.label"
+                          :value="item.value"></el-option>
+                      </el-option-group>
+                    </el-select>
+                    <el-button slot="append" @click="gotoGayhub" icon="el-icon-link">前往项目仓库</el-button>
+                  </div>
+                </el-form-item>
+
+                <el-form-item label="远程配置:">
+                  <div style="display: flex; align-items: center;">
+                    <el-select v-model="form.remoteConfig" allow-create filterable placeholder="请选择" style="width: 100%">
+                      <el-option-group v-for="group in options.remoteConfig" :key="group.label" :label="group.label">
+                        <el-option v-for="item in group.options" :key="item.value" :label="item.label"
+                          :value="item.value"></el-option>
+                      </el-option-group>
+                    </el-select>
+                    <el-button slot="append" @click="gotoRemoteConfig" icon="el-icon-link">配置示例</el-button>
+                  </div>
+                </el-form-item>
+
                 <el-form-item label="Include:">
                   <el-input v-model="form.includeRemarks" placeholder="节点名包含的关键字，支持正则" />
                 </el-form-item>
@@ -178,6 +205,7 @@
 <script>
 const project = process.env.VUE_APP_PROJECT
 const remoteConfigSample = process.env.VUE_APP_SUBCONVERTER_REMOTE_CONFIG
+const gayhub = process.env.VUE_APP_BACKEND
 const gayhubRelease = process.env.VUE_APP_BACKEND_RELEASE
 const defaultBackend = process.env.VUE_APP_SUBCONVERTER_DEFAULT_BACKEND + '/sub?'
 const shortUrlBackend = process.env.VUE_APP_MYURLS_API
@@ -212,20 +240,48 @@ export default {
         },
         backendOptions: [
           {
-            label: "sub.xeton.dev (subconverter作者后端)",
-            value: "https://subconverter.freelxy.site/sub?"
+            label: "反代加密",
+            options: [
+              {
+                label: "加密 sub.xeton.dev (subconverter作者后端)",
+                value:
+                  "https://subconverter.freelxy.site/sub?"
+              },
+              {
+                label: "加密 sub.maoxiongnet.com (猫熊后端)",
+                value: "https://subconverter.freelxy.site/sub?bd=sub.maoxiongnet.com&"
+              },
+              {
+                label: "加密 sub.id9.cc (品云后端)",
+                value: "https://subconverter.freelxy.site/sub?bd=sub.id9.cc&"
+              },
+              {
+                label: "加密 v.id9.cc (品云实验后端)",
+                value: "https://subconverter.freelxy.site/sub?bd=v.id9.cc&"
+              }
+            ]
           },
           {
-            label: "sub.maoxiongnet.com (猫熊后端)",
-            value: "https://subconverter.freelxy.site/sub?bd=sub.maoxiongnet.com&"
-          },
-          {
-            label: "sub.id9.cc (品云后端)",
-            value: "https://subconverter.freelxy.site/sub?bd=sub.id9.cc&"
-          },
-          {
-            label: "v.id9.cc (品云实验后端)",
-            value: "https://subconverter.freelxy.site/sub?bd=v.id9.cc&"
+            label: "原始后端",
+            options: [
+              {
+                label: "sub.xeton.dev (subconverter作者后端)",
+                value:
+                  "https://sub.xeton.dev/sub?"
+              },
+              {
+                label: "sub.maoxiongnet.com (猫熊后端)",
+                value: "https://sub.maoxiongnet.com/sub?"
+              },
+              {
+                label: "sub.id9.cc (品云后端)",
+                value: "https://sub.id9.cc/sub?"
+              },
+              {
+                label: "v.id9.cc (品云实验后端)",
+                value: "https://v.id9.cc/sub?"
+              }
+            ]
           }
         ],
         remoteConfig: [
@@ -379,6 +435,9 @@ export default {
       window.open(project);
     },
     gotoGayhub() {
+      window.open(gayhub);
+    },
+    gotoGayhubRelease() {
       window.open(gayhubRelease);
     },
     gotoRemoteConfig() {
