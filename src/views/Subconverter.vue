@@ -52,7 +52,7 @@
                           :value="item.value"></el-option>
                       </el-option-group>
                     </el-select>
-                    <el-button slot="append" @click="gotoGayhub" icon="el-icon-link">前往项目仓库</el-button>
+                    <el-button slot="append" @click="gotoGayhub" icon="el-icon-link">项目仓库</el-button>
                   </div>
                 </el-form-item>
 
