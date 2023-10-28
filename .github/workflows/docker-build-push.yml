@@ -2,12 +2,9 @@ name: Build and Push Multi-Arch Docker Image
 
 on:
   push:
-    #branches:
-      #- master
+    branches:
+      - master
       
-    branches-ignore:
-        - '*'
-
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -31,4 +28,4 @@ jobs:
         context: .
         platforms: linux/amd64,linux/arm64
         push: true
-        tags: careywong/subweb:latest
+        tags: sovy0/subweb:latest
