@@ -389,7 +389,7 @@ export default {
         nodeList: false,
         extraset: false,
         sort: false,
-        udp: false,
+        udp: true,
         tfo: false,
         scv: true,
         fdn: false,
@@ -420,7 +420,7 @@ export default {
       myBot: tgBotLink,
       sampleConfig: remoteConfigSample,
 
-      needUdp: false, // 是否需要添加 udp 参数
+      needUdp: true, // 是否需要添加 udp 参数
     };
   },
   created() {
