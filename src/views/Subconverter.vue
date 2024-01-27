@@ -239,25 +239,35 @@ export default {
           Surge2: "surge&ver=2",
         },
         backendOptions: [
+        {
+            label: "mine",
+            options: [
+              {
+                label: "自建",
+                value:
+                  "https://subconverter.freelxy.site/sub?"
+              }
+            ]
+          },
           {
             label: "反代加密",
             options: [
               {
                 label: "加密 sub.xeton.dev (subconverter作者后端)",
                 value:
-                  "https://subconverter.freelxy.site/sub?"
+                  "https://psub.freelxy.site/sub?"
               },
               {
                 label: "加密 sub.maoxiongnet.com (猫熊后端)",
-                value: "https://subconverter.freelxy.site/sub?bd=sub.maoxiongnet.com&"
+                value: "https://psub.freelxy.site/sub?bd=sub.maoxiongnet.com&"
               },
               {
                 label: "加密 sub.id9.cc (品云后端)",
-                value: "https://subconverter.freelxy.site/sub?bd=sub.id9.cc&"
+                value: "https://psub.freelxy.site/sub?bd=sub.id9.cc&"
               },
               {
                 label: "加密 v.id9.cc (品云实验后端)",
-                value: "https://subconverter.freelxy.site/sub?bd=v.id9.cc&"
+                value: "https://psub.freelxy.site/sub?bd=v.id9.cc&"
               }
             ]
           },
