@@ -240,10 +240,15 @@ export default {
         },
         backendOptions: [
         {
-            label: "mine",
+            label: "自用",
             options: [
               {
-                label: "自建",
+                label: "Koyeb 部署",
+                value:
+                  "https://subconverter-sovy0.koyeb.app/sub?"
+              },
+              {
+                label: "VPS 自建",
                 value:
                   "https://subconverter.freelxy.site/sub?"
               }
@@ -253,7 +258,7 @@ export default {
             label: "反代加密",
             options: [
               {
-                label: "加密 sub.xeton.dev (subconverter作者后端)",
+                label: "加密 sub.xeton.dev (subconverter 作者后端)",
                 value:
                   "https://psub.freelxy.site/sub?"
               },
@@ -275,7 +280,7 @@ export default {
             label: "原始后端",
             options: [
               {
-                label: "sub.xeton.dev (subconverter作者后端)",
+                label: "sub.xeton.dev (subconverter 作者后端)",
                 value:
                   "https://sub.xeton.dev/sub?"
               },
