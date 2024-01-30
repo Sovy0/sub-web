@@ -258,7 +258,7 @@ export default {
             label: "反代加密",
             options: [
               {
-                label: "加密 sub.xeton.dev (subconverter 作者后端)",
+                label: "加密 sub.xeton.dev (subconverter作者后端)",
                 value:
                   "https://psub.freelxy.site/sub?"
               },
@@ -280,7 +280,7 @@ export default {
             label: "原始后端",
             options: [
               {
-                label: "sub.xeton.dev (subconverter 作者后端)",
+                label: "sub.xeton.dev (subconverter作者后端)",
                 value:
                   "https://sub.xeton.dev/sub?"
               },
