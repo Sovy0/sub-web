@@ -759,7 +759,8 @@ export default {
     getBackendVersion() {
       this.$axios
         .get(
-          "https://cors-anywhere.herokuapp.com/" + defaultBackend.substring(0, defaultBackend.length - 5) + "/version"
+          "https://cors.yanglx0530.workers.dev/?" + defaultBackend.substring(0, defaultBackend.length - 5) + "/version"
+        // https://cors-anywhere.herokuapp.com/
         )
         .then(res => {
           this.backendVersion = res.data.replace(/backend\n$/gm, "");
